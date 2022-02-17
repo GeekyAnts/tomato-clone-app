@@ -15,7 +15,7 @@ import {
   FontAwesome,
   Ionicons,
   MaterialCommunityIcons,
-} from "@expo/vector-icons";
+} from "@native-base/icons";
 function ReviewCard(props: any) {
   return (
     <VStack w="100%" px="4" mt={2}>

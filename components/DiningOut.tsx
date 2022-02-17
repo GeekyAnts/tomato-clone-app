@@ -10,7 +10,7 @@ import {
   Pressable,
   ScrollView,
 } from "native-base";
-import { Octicons } from "@expo/vector-icons";
+import { Octicons } from "@native-base/icons";
 import { useRouter } from "next/router";
 
 const card_data = [

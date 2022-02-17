@@ -1,5 +1,5 @@
 import React from "react";
-import { Octicons } from "@expo/vector-icons";
+import { Octicons } from "@native-base/icons";
 import { HStack, Icon, Link, Stack, Text, VStack } from "native-base";
 
 function FoodBloggerCard(props: any) {

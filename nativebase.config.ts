@@ -1,6 +1,6 @@
 const config =  {
     dependencies: {
-      'linear-gradient': require('expo-linear-gradient').LinearGradient,
+      'linear-gradient': require('react-native-linear-gradient').default,
     },
   };
 

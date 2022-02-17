@@ -1,6 +1,6 @@
 import React from "react";
 import { VStack, HStack, Icon, Text, Pressable, Stack } from "native-base";
-import { Entypo, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Entypo, MaterialCommunityIcons } from "@native-base/icons";
 
 function Details(props: any) {
   return (

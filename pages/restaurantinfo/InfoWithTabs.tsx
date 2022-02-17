@@ -11,7 +11,7 @@ import {
   Hidden,
   Stack,
 } from "native-base";
-import { Octicons } from "@expo/vector-icons";
+import { Octicons } from "@native-base/icons";
 import LocationCard from "./LocationCard";
 import RestaurantCard from "./RestaurantCard";
 import RateYourExperience from "./RateYourExperience";

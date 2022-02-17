@@ -23,7 +23,7 @@ import {
   Ionicons,
   MaterialCommunityIcons,
   Octicons,
-} from "@expo/vector-icons";
+} from "@native-base/icons";
 
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";

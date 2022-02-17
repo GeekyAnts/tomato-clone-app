@@ -17,7 +17,7 @@ import {
 } from "native-base";
 import ZomatoCategories from "./ZomatoCategories";
 import Footer from "../../components/Footer";
-import { AntDesign, Entypo, FontAwesome } from "@expo/vector-icons";
+import { AntDesign, Entypo, FontAwesome } from "@native-base/icons";
 
 export default function Home() {
   const isTablet = useBreakpointValue({

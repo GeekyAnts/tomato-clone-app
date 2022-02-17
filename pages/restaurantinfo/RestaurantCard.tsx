@@ -1,4 +1,4 @@
-import { Entypo, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Entypo, MaterialCommunityIcons } from "@native-base/icons";
 import { Center, HStack, Icon, Image, Text, VStack } from "native-base";
 import React from "react";
 import { listType } from "../../types/restaurants";
