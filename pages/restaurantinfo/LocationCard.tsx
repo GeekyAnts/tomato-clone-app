@@ -9,7 +9,7 @@ import {
   Link,
   Pressable,
 } from "native-base";
-import { Fontisto, MaterialCommunityIcons, Octicons } from "@expo/vector-icons";
+import { Fontisto, MaterialCommunityIcons, Octicons } from "@native-base/icons";
 
 function LocationCard(prps: any) {
   return (

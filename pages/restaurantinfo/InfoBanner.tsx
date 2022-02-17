@@ -1,6 +1,6 @@
 import React from "react";
 import { Center, VStack, Image, HStack, Icon, Text, Hidden } from "native-base";
-import { Feather } from "@expo/vector-icons";
+import { Feather } from "@native-base/icons";
 
 function InfoBanner(props: any) {
   return (

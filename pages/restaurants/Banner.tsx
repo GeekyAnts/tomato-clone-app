@@ -1,5 +1,5 @@
 import React from "react";
-import { Entypo } from "@expo/vector-icons";
+import { Entypo } from "@native-base/icons";
 import {
   Center,
   VStack,

@@ -6,7 +6,7 @@ import config from "../nativebase.config";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <NativeBaseProvider theme={ZomatoTheme} config={config}>
+    <NativeBaseProvider theme={ZomatoTheme} config={config} isSSR>
       <Component {...pageProps} />
     </NativeBaseProvider>
   );

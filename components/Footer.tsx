@@ -14,7 +14,7 @@ import {
   Entypo,
   MaterialCommunityIcons,
   SimpleLineIcons,
-} from "@expo/vector-icons";
+} from "@native-base/icons";
 
 const Links_Company = [
   "Who We Are",

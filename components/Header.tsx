@@ -10,7 +10,7 @@ import {
   Box,
   Pressable,
 } from "native-base";
-import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
+import { AntDesign, Entypo, Ionicons } from "@native-base/icons";
 import { useRouter } from "next/router";
 import Image from "next/image";
 

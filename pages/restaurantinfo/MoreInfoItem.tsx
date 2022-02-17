@@ -1,5 +1,5 @@
 import React from "react";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign } from "@native-base/icons";
 import { HStack, Icon, Text } from "native-base";
 
 function MoreInfoItem(props: any) {
