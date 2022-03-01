@@ -23,5 +23,8 @@ module.exports = withNativebase({
       ];
       return config;
     },
+    images: {
+      domains: ["https://b.zmtcdn.com/web_assets", "upload.wikimedia.org/"],
+    },
   },
 });
