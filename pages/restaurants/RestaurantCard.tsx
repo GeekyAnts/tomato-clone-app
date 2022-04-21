@@ -28,7 +28,7 @@ function RestaurantCard(props: PropType) {
     >
       <VStack my={1} space={1}>
         <VStack h={185}>
-          <Image
+          {/* <Image
             borderRadius="lg"
             position="absolute"
             zIndex="-2"
@@ -38,7 +38,7 @@ function RestaurantCard(props: PropType) {
               uri: props.item?.imageUri,
             }}
             alt="Alternate Text"
-          />
+          /> */}
           {props.item?.featured ? (
             <HStack pl={2} pt={2} space="1" alignItems="center">
               <Center w={6} h={6} bg="red.500" borderRadius="full">

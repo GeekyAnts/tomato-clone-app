@@ -28,12 +28,19 @@ export default function GoForMeal(props: any) {
       h="100%"
     >
       <Header />
-      <VStack w={{ base: "95%", md: "90%", lg: "80%" }} mt="2">
-        <HStack bg="coolGray.50" pt="2" w="100%" px="4" mb="3">
+      <VStack
+        // w={{ base: "95%", md: "90%", lg: "80%" }}
+        w="100%"
+        maxW="1100"
+        px="4"
+        mt="2"
+        space="2"
+      >
+        <HStack pt="2" w="100%" px="4">
           <Link
             isUnderlined={false}
             _text={{
-              color: "coolGray.700",
+              color: "grayZomato.100",
               fontSize: "xs",
               fontWeight: "light",
             }}
@@ -46,10 +53,10 @@ export default function GoForMeal(props: any) {
           >
             Home
           </Link>
-          <Text color="coolGray.400" fontSize={"xs"}>
+          <Text color="grayZomato.100" fontSize={"xs"}>
             {"  "}/{"  "}
           </Text>
-          <Text color="coolGray.300" fontWeight={"normal"} fontSize={"xs"}>
+          <Text color="grayZomato.100" fontWeight="normal" fontSize={"xs"}>
             Collections
           </Text>
         </HStack>

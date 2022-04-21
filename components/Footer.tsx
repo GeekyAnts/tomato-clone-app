@@ -9,6 +9,7 @@ import {
   VStack,
   Image,
   Pressable,
+  Stack,
 } from "native-base";
 import {
   Entypo,
@@ -36,16 +37,9 @@ const Links_ForYou = ["Privacy", "Terms", "Security", "Sitemap"];
 
 export default function Footer(props: any) {
   return (
-    <Box
-      bg="coolGray.100"
-      py="5"
-      w="100%"
-      px={{ base: 2 }}
-      mt="4"
-      alignItems="center"
-    >
-      <VStack w={{ base: "95%", md: "80%", lg: "80%", xl: "80%" }}>
-        <HStack
+    <Box bg="coolGray.100" py="5" px="8" alignItems="center">
+      <VStack maxW="1100">
+        <Stack
           mb={{ base: 5, md: 8 }}
           alignItems={{ base: "flex-start", md: "center" }}
           justifyContent="space-between"
@@ -114,7 +108,7 @@ export default function Footer(props: any) {
               </Pressable>
             </HStack>
           </HStack>
-        </HStack>
+        </Stack>
         <HStack
           justifyContent="space-between"
           mr="16"

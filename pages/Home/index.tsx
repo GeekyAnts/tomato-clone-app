@@ -10,7 +10,10 @@ import {
   Icon,
   Image,
   Input,
+  Menu,
   Pressable,
+  Select,
+  Stack,
   Text,
   useBreakpointValue,
   VStack,
@@ -31,9 +34,10 @@ export default function Home() {
         alignItems="center"
         w="100%"
         bg="coolGray.50"
+        pb="10"
         display={!isSlideOpen ? "flex" : "none"}
       >
-        <VStack w="100%" h={500} nativeID="1234">
+        <VStack w="100%" h={500}>
           <Image
             position="absolute"
             zIndex="-1"
@@ -45,41 +49,51 @@ export default function Home() {
             h={500}
           />
           {isTablet ? (
-            <HStack
-              alignItems="center"
-              justifyContent="space-between"
-              mx={{ base: 10, md: 20, lg: 40 }}
-              py={4}
-            >
-              <Pressable flexDir="row" alignItems="center">
-                <Icon as={FontAwesome} name="mobile" size="xs" color="white" />
-                <Text color="white" fontWeight="medium" fontSize="md">
-                  Get the App
-                </Text>
-              </Pressable>
-
-              <HStack space={{ base: "5", sm: "10" }} alignItems="center">
-                <Pressable>
+            <Box px="8">
+              <HStack
+                alignItems="center"
+                justifyContent="space-between"
+                mx={{ base: 10, md: 20, lg: 40 }}
+                py={4}
+                maxW="1100"
+                alignSelf="center"
+                w="100%"
+                // px={{ md: "8", lg: 0 }}
+              >
+                <Pressable flexDir="row" alignItems="center">
+                  <Icon
+                    as={FontAwesome}
+                    name="mobile"
+                    size="xs"
+                    color="white"
+                  />
                   <Text color="white" fontWeight="medium" fontSize="md">
-                    Add restaurant
+                    Get the App
                   </Text>
                 </Pressable>
-                <Pressable>
-                  <Text color="white" fontWeight="medium" fontSize="md">
-                    Log in
-                  </Text>
-                </Pressable>
-                <Pressable>
-                  <Text color="white" fontWeight="medium" fontSize="md">
-                    Sign up
-                  </Text>
-                </Pressable>
+                <HStack space={{ base: "5", sm: "10" }} alignItems="center">
+                  <Pressable>
+                    <Text color="white" fontWeight="medium" fontSize="md">
+                      Add restaurant
+                    </Text>
+                  </Pressable>
+                  <Pressable>
+                    <Text color="white" fontWeight="medium" fontSize="md">
+                      Log in
+                    </Text>
+                  </Pressable>
+                  <Pressable>
+                    <Text color="white" fontWeight="medium" fontSize="md">
+                      Sign up
+                    </Text>
+                  </Pressable>
+                </HStack>
               </HStack>
-            </HStack>
+            </Box>
           ) : (
-            <HStack>
+            <HStack px="5">
               <Pressable m="3" onPress={() => setSlideOpen(true)}>
-                <HamburgerIcon color="white" />
+                <HamburgerIcon color="white" size="5" />
               </Pressable>
             </HStack>
           )}
@@ -105,59 +119,105 @@ export default function Home() {
               Discover the best food &amp; drinks in Delhi NCR
             </Heading>
 
-            <HStack
+            <Stack
+              direction={{ md: "row" }}
               bg="white"
               space="3"
-              alignItems="center"
-              w={{ base: "90%", md: "60%", lg: "48%" }}
-              py={2}
+              alignItems={{ base: "stretch", md: "center" }}
+              w={{ base: "60%", lg: "48%" }}
+              p={2}
               mt={12}
               borderRadius="lg"
             >
-              <Pressable flexDir="row" alignItems="center">
+              {/* <Pressable flexDir="row" alignItems="center">
                 <Icon
-                  ml="2"
                   as={Entypo}
                   name="location-pin"
                   size="6"
                   color="red.400"
                 />
                 <Text color="coolGray.500" fontSize="md" mx="1">
-                  Bangla Sahib Gurdwara |
+                  Bangla Sahib Gurdwara
                 </Text>
                 <Icon
                   as={AntDesign}
                   name="caretdown"
                   size="3"
                   color="coolGray.600"
+                  ml={{ base: "auto", md: "" }}
                 />
-                <Divider h={5} w={0.5} ml={2} orientation="vertical" />
-              </Pressable>
-              <HStack space="3" alignItems="center" flex={1}>
-                <Icon
-                  ml={3}
-                  as={AntDesign}
-                  name="search1"
-                  size="5"
-                  color="coolGray.500"
+                <Divider
+                  display={{ base: "none", md: "inline" }}
+                  h={5}
+                  w={0.5}
+                  ml={2}
+                  orientation="vertical"
                 />
-                <Input
-                  w="100%"
-                  _hover={{ bg: "white" }}
-                  _focus={{ bg: "white" }}
-                  color="coolGray.500"
-                  fontSize="md"
-                  flex={1}
-                  borderWidth={0}
-                  outline="undefined"
-                />
-              </HStack>
-            </HStack>
+              </Pressable> */}
+              <Menu
+                w="56"
+                // w="100%"
+                placement="bottom"
+                trigger={(triggerProps) => {
+                  return (
+                    <Pressable
+                      flexDir="row"
+                      alignItems="center"
+                      {...triggerProps}
+                    >
+                      <Icon
+                        as={Entypo}
+                        name="location-pin"
+                        size="6"
+                        color="red.400"
+                      />
+                      <Text color="coolGray.500" fontSize="md" mx="1">
+                        Bangla Sahib Gurdwara
+                      </Text>
+                      <Icon
+                        as={AntDesign}
+                        name="caretdown"
+                        size="3"
+                        color="coolGray.600"
+                        ml={{ base: "auto", md: "" }}
+                      />
+                      <Divider
+                        display={{ base: "none", md: "inline" }}
+                        h={5}
+                        w={0.5}
+                        ml={2}
+                        orientation="vertical"
+                      />
+                    </Pressable>
+                  );
+                }}
+              >
+                <Menu.Item>
+                  <Text color="cyanZomato.200">Detect current location</Text>
+                </Menu.Item>
+              </Menu>
+              <Input
+                leftElement={
+                  <Icon
+                    ml="1"
+                    as={AntDesign}
+                    name="search1"
+                    size="5"
+                    color="coolGray.500"
+                  />
+                }
+                color="coolGray.500"
+                fontSize="md"
+                variant="unstyled"
+                placeholder="Search for a restaurant, cuisine or dish"
+                flex="1"
+              />
+            </Stack>
           </Center>
         </VStack>
         <ZomatoCategories />
-        <Footer />
       </VStack>
+      <Footer />
       <Box
         w="100%"
         h="100vh"

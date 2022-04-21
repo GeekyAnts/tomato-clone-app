@@ -5,11 +5,14 @@ import {
   Box,
   Center,
   FlatList,
+  HStack,
   Image,
   Pressable,
+  Stack,
   useBreakpointValue,
   VStack,
 } from "native-base";
+import { View } from "react-native";
 
 const list = [
   {
@@ -40,6 +43,28 @@ function ZomatoCategories() {
     base: 2,
     md: 4,
   });
+
+  return (
+    <HStack
+      direction={{ base: "column", md: "row" }}
+      mt="16"
+      flexWrap="wrap"
+      width={{ base: "80%", sm: "50%", md: "100%" }}
+      justifyContent={{ base: "", sm: "center" }}
+      space={{ base: 4, lg: 2 }}
+    >
+      {list.map((item, index) => (
+        <Pressable
+          key={index}
+          onPress={() => {
+            router.push("/goformeal");
+          }}
+        >
+          <Card item={item} />
+        </Pressable>
+      ))}
+    </HStack>
+  );
   return (
     <FlatList
       w="90%"
@@ -49,7 +74,9 @@ function ZomatoCategories() {
       key={noColumn}
       data={list}
       keyExtractor={(item, index) => "key" + index}
-      ItemSeparatorComponent={() => <Box w="10" h="10" />}
+      ItemSeparatorComponent={() => (
+        <View style={{ width: "10", height: "10" }} />
+      )}
       columnWrapperStyle={{
         justifyContent: "space-between",
       }}
@@ -59,6 +86,7 @@ function ZomatoCategories() {
           onPress={() => {
             router.push("/goformeal");
           }}
+          ml={index !== 0 ? 2 : 0}
           width={{ base: "49%", md: "22%" }}
         >
           <Card item={item} />
@@ -71,25 +99,28 @@ function ZomatoCategories() {
 function Card(props: any) {
   return (
     <VStack
-      w="100%"
+      // w={{ base: "100%", sm: "auto" }}
       alignItems="center"
       borderWidth={1}
       borderColor="coolGray.200"
       borderRadius="lg"
+      overflow="hidden"
+      mx={{ base: 4, sm: 0 }}
     >
       <Image
         borderTopLeftRadius="lg"
         borderTopRightRadius="lg"
-        w="100%"
-        h={220}
+        // w="100%"
+        w={{ base: "100%", md: "267" }}
+        h={192}
         source={{
           uri: props.item.imageUri,
         }}
         alt="Alternate Text"
       />
       <Center
-        h={20}
-        py={2}
+        // h={20}
+        py={3}
         _text={{ fontSize: "lg", textAlign: "center" }}
         color="coolGray.800"
         fontWeight="extrabold"
