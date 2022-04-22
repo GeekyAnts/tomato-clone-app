@@ -19,7 +19,7 @@ import Image from "next/image";
 export default function Header(props: any) {
   const router = useRouter();
   return (
-    <Box w="100%" alignItems="center" mb="4" px="4">
+    <Box w="100%" alignItems="center" mb="4" px="8">
       {/* <Hidden from="base" till="lg"> */}
       <HStack mt="2" space="3" alignItems="center" w="100%" maxW="1100">
         <Pressable
@@ -49,7 +49,7 @@ export default function Header(props: any) {
         >
           <Menu
             w="190"
-            placement="bottom"
+            // placement="bottom"
             trigger={(triggerProps) => {
               return (
                 <Pressable

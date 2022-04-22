@@ -37,7 +37,7 @@ const Links_ForYou = ["Privacy", "Terms", "Security", "Sitemap"];
 
 export default function Footer(props: any) {
   return (
-    <Box bg="coolGray.100" py="5" px="8" alignItems="center">
+    <Box bg="coolGray.100" w="100%" py="5" px="8" alignItems="center">
       <VStack maxW="1100">
         <Stack
           mb={{ base: 5, md: 8 }}
@@ -49,64 +49,65 @@ export default function Footer(props: any) {
             Tomato
           </Text>
           <HStack alignItems="center" space="4">
-            <HStack
-              space="1"
-              py="1"
-              px="1"
-              alignItems="center"
-              borderWidth="1"
-              borderColor="coolGray.400"
-              borderRadius="4"
-            >
-              <Image
-                source={{
-                  uri: "https://cdn.britannica.com/97/1597-004-05816F4E/Flag-India.jpg",
-                }}
-                alt="Alternate Text"
-                size="5"
-                resizeMode="contain"
-                mr="2"
-                ml="1"
-              />
-              <Text fontWeight="normal" fontSize="lg">
-                India
-              </Text>
-              <Pressable>
-                <Icon
-                  as={<MaterialCommunityIcons name="chevron-down" />}
+            <Pressable>
+              <HStack
+                space="1"
+                py="1"
+                px="1"
+                alignItems="center"
+                borderWidth="1"
+                borderColor="coolGray.400"
+                borderRadius="4"
+              >
+                <Image
+                  source={{
+                    uri: "https://cdn.britannica.com/97/1597-004-05816F4E/Flag-India.jpg",
+                  }}
+                  alt="Alternate Text"
                   size="5"
-                  color="coolGray.900"
+                  resizeMode="contain"
+                  mr="2"
+                  ml="1"
                 />
-              </Pressable>
-            </HStack>
-            <HStack
-              space="1"
-              py="1"
-              px="1"
-              alignItems="center"
-              borderWidth="1"
-              borderColor="coolGray.400"
-              borderRadius="4"
-            >
-              <Icon
-                as={<SimpleLineIcons name="globe" />}
-                size="4"
-                color="coolGray.900"
-                mr="1"
-                ml="1"
-              />
-              <Text fontWeight="normal" fontSize="lg">
-                English
-              </Text>
+                <Text fontWeight="normal" fontSize="lg">
+                  India
+                </Text>
 
-              <Pressable>
                 <Icon
                   as={<MaterialCommunityIcons name="chevron-down" />}
                   size="5"
                   color="coolGray.900"
                 />
-              </Pressable>
-            </HStack>
+              </HStack>
+            </Pressable>
+            <Pressable>
+              <HStack
+                space="1"
+                py="1"
+                px="1"
+                alignItems="center"
+                borderWidth="1"
+                borderColor="coolGray.400"
+                borderRadius="4"
+              >
+                <Icon
+                  as={<SimpleLineIcons name="globe" />}
+                  size="4"
+                  color="coolGray.900"
+                  mr="1"
+                  ml="1"
+                />
+                <Text fontWeight="normal" fontSize="lg">
+                  English
+                </Text>
+
+                <Icon
+                  as={<MaterialCommunityIcons name="chevron-down" />}
+                  size="5"
+                  color="coolGray.900"
+                />
+              </HStack>
+            </Pressable>
           </HStack>
         </Stack>
         <HStack
