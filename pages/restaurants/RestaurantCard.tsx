@@ -24,7 +24,7 @@ function RestaurantCard(props: PropType) {
         router.push("/restaurantinfo");
       }}
       flex="1"
-      maxW={{ base: "100%", sm: "49%", lg: "32%", xl: "24%" }}
+      maxW={{ base: "100%", sm: "49%", lg: "32%" }}
     >
       <VStack my={1} space={1}>
         <VStack h={185}>

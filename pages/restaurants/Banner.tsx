@@ -1,13 +1,14 @@
 import React from "react";
 import { Entypo } from "@native-base/icons";
 import {
-  Center,
   VStack,
   Image,
   HStack,
   Icon,
   Heading,
   Text,
+  Pressable,
+  Button,
 } from "native-base";
 
 function Banner() {
@@ -33,29 +34,32 @@ function Banner() {
         mt={4}
         pr={4}
       >
-        <Center
+        <Button
+          variant="unstyled"
           bg="black"
           opacity={0.7}
           px={4}
           py={2}
-          borderRadius={20}
           _text={{
             color: "white",
             fontWeight: "medium",
             fontSize: "md",
           }}
+          rounded="full"
         >
           + Save Collection
-        </Center>
-        <Center w={9} h={9} bg="black" opacity={0.7} borderRadius="full">
-          <Icon
-            color="white"
-            fontWeight="medium"
-            as={Entypo}
-            size="xs"
-            name="attachment"
-          />
-        </Center>
+        </Button>
+        <Pressable
+          w={9}
+          h={9}
+          bg="black"
+          opacity={0.7}
+          rounded="full"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Icon color="white" as={Entypo} size="xs" name="attachment" />
+        </Pressable>
       </HStack>
       <VStack flex={1} pl={5} pb={5} justifyContent="flex-end">
         <VStack>
