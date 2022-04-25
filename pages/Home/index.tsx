@@ -49,16 +49,13 @@ export default function Home() {
             h={500}
           />
           {isTablet ? (
-            <Box px="8">
+            <Box px="8" alignItems="center">
               <HStack
-                alignItems="center"
                 justifyContent="space-between"
                 mx={{ base: 10, md: 20, lg: 40 }}
                 py={4}
                 maxW="1100"
-                alignSelf="center"
                 w="100%"
-                // px={{ md: "8", lg: 0 }}
               >
                 <Pressable flexDir="row" alignItems="center">
                   <Icon
