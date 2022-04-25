@@ -88,6 +88,16 @@ const list = [
     deliverhyReview: 4.5,
     address: "Bubble Tea, Healthy Food, Italian, Salad, Fast Food,",
   },
+  {
+    id: 5,
+    featured: true,
+    imageUri:
+      "https://b.zmtcdn.com/data/pictures/chains/5/18367195/3776dceebc30566d77281fc61079db82.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*",
+    name: "The Calorie Kitchen",
+    dininingReviw: 4.6,
+    deliverhyReview: 4.7,
+    address: "Healthy Food, Continental Good Earth City ",
+  },
 ] as listType[];
 
 export default function Restaurants() {
@@ -95,7 +105,7 @@ export default function Restaurants() {
     base: 1,
     sm: 2,
     lg: 3,
-    xl: 4,
+    // xl: 4,
   });
 
   const ListItemSepartor = () => {
@@ -104,7 +114,7 @@ export default function Restaurants() {
   return (
     <VStack alignItems="center" bg="coolGray.50" w="100%">
       <Header />
-      <Box maxW="1164" w="100%" px="8">
+      <Box maxW="1164" w="100%" px="8" mb="10">
         <Navigator />
         <Banner />
         {noColumn > 1 ? (

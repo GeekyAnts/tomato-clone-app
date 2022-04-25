@@ -64,16 +64,8 @@ function RestaurantCard(props: PropType) {
           borderRadius="lg"
           bg="success.700"
         >
-          <Text color="white" fontWeight="medium" fontSize="sm">
-            {props?.item?.dininingReviw}
-          </Text>
-          <Icon
-            color="white"
-            fontWeight="medium"
-            as={Entypo}
-            size="xxs"
-            name="star"
-          />
+          <Text color="white">{props?.item?.dininingReviw}</Text>
+          <Icon color="white" as={Entypo} size="xxs" name="star" />
         </HStack>
         <Text color="coolGray.700" fontWeight="normal" fontSize="xs">
           DINING |
@@ -100,7 +92,7 @@ function RestaurantCard(props: PropType) {
           DELIVERY
         </Text>
       </HStack>
-      <Text color="coolGray.800" fontWeight="normal" fontSize="md">
+      <Text color="grayZomato.200" fontSize="sm">
         {props?.item?.address}
       </Text>
     </VStack>

@@ -172,7 +172,6 @@ function LocationCard(prps: any) {
           </Text>
         </Link>
       </HStack>
-      {/* <HStack alignItems={"center"} space="2" mt="1"> */}
       <Link
         flex="1"
         href="#"
@@ -197,7 +196,6 @@ function LocationCard(prps: any) {
           color="red.400"
         />
       </Link>
-      {/* </HStack> */}
     </VStack>
   );
 }

@@ -30,5 +30,8 @@ export const ZomatoTheme = extendTheme({
     orangeTomato: {
       300: "#f4a266",
     },
+    darkZomato: {
+      600: "#1c1c1c",
+    },
   },
 });
