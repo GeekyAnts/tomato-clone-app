@@ -16,7 +16,12 @@ function FoodBloggerCard(props: any) {
       justifyContent="space-between"
     >
       <VStack py={2}>
-        <Text color="coolGray.800" fontWeight="medium" fontSize="xl">
+        <Text
+          color="coolGray.800"
+          fontWeight="medium"
+          fontSize="2xl"
+          lineHeight="32"
+        >
           Are you a food blogger?
         </Text>
         <HStack alignItems="center" space="2" mt="1">

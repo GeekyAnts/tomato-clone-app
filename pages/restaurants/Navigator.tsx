@@ -1,5 +1,5 @@
 import React from "react";
-import { HStack, Text, Link } from "native-base";
+import { HStack, Text, Link, Box } from "native-base";
 import { useRouter } from "next/router";
 
 export default function Navigator() {
@@ -47,7 +47,7 @@ export default function Navigator() {
       >
         Collections
       </Link>
-      <Text color="coolGray.400" fontSize={"xs"}>
+      <Text color="coolGray.400" fontSize="xs">
         {"  "}/{"  "}
       </Text>
       <Link
@@ -66,10 +66,10 @@ export default function Navigator() {
       >
         Bengaluru Restaurants
       </Link>
-      <Text color="coolGray.400" fontSize={"xs"}>
+      <Text color="coolGray.400" fontSize="xs">
         {"  "}/{"  "}
       </Text>
-      <Text color="coolGray.300" fontWeight={"normal"} fontSize={"xs"}>
+      <Text color="coolGray.300" fontWeight="normal" fontSize="xs">
         Trending this week
       </Text>
     </HStack>

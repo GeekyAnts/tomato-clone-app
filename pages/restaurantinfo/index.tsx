@@ -1,52 +1,91 @@
 import React from "react";
-import {
-  Center,
-  VStack,
-  Image,
-  HStack,
-  Icon,
-  Text,
-  Box,
-  Divider,
-  Link,
-  Pressable,
-  ScrollView,
-  Radio,
-  Hidden,
-} from "native-base";
-import {
-  AntDesign,
-  Entypo,
-  Feather,
-  FontAwesome,
-  Fontisto,
-  Ionicons,
-  MaterialCommunityIcons,
-  Octicons,
-} from "@native-base/icons";
-
+import { Box, HStack, Text, VStack, Pressable } from "native-base";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Navigator from "./Navigator";
 import InfoBanner from "./InfoBanner";
 import Details from "./Details";
-import InfoWithTabs from "./InfoWithTabs";
+import InfoWithTabs, { BookTableTab, OverviewTab } from "./InfoWithTabs";
+import { tabListType } from "../../types/restaurants";
+import ReviewCard from "./ReviewCard";
+
+const TabList = [
+  {
+    name: "Overview",
+  },
+  {
+    name: "Order Online",
+  },
+  {
+    name: "Reviews",
+  },
+  {
+    name: "Photos",
+  },
+  {
+    name: "Menu",
+  },
+  {
+    name: "Book a Table",
+  },
+] as tabListType[];
 
 export default function RestaurantInfo() {
+  const [tabName, setTabName] = React.useState("Overview");
   return (
     <VStack alignItems="center" bg="coolGray.50">
       <Header />
 
-      <VStack
+      {/* <VStack
         alignItems="center"
         px={{ base: 4 }}
         w={{ base: "95%", md: "90%", lg: "80%" }}
-      >
+      > */}
+      <Box maxW="1164" w="100%" px="8">
         <Navigator />
         <InfoBanner />
-        <Details />
-        <InfoWithTabs />
-      </VStack>
+        <Box
+          bg="coolGray.50"
+          position={{ base: "initial", md: "sticky" }}
+          top="0"
+          zIndex="40"
+        >
+          <Details />
+          {/* <InfoWithTabs /> */}
+          <HStack mt="6" w="100%" flexWrap="wrap">
+            {TabList.map((item: tabListType, index: any) => {
+              return (
+                <Pressable
+                  key={index}
+                  px={{ base: 2, lg: 6 }}
+                  pb="4"
+                  onPress={() => {
+                    setTabName(item.name);
+                  }}
+                  borderBottomWidth="2"
+                  borderBottomColor={
+                    tabName == item.name ? "red.400" : "coolGray.300"
+                  }
+                >
+                  <Text
+                    fontWeight="normal"
+                    fontSize="lg"
+                    color={tabName == item.name ? "red.500" : "grayZomato.200"}
+                  >
+                    {item.name}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </HStack>
+        </Box>
+        {tabName == "Overview" ? <OverviewTab /> : null}
+        {tabName == "Reviews" ? <ReviewCard /> : null}
+        {tabName == "Book a Table" ? <BookTableTab /> : null}
+
+        {/* <InfoWithTabs /> */}
+        {/* </VStack> */}
+      </Box>
       <Footer />
     </VStack>
   );

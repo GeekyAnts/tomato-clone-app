@@ -10,10 +10,12 @@ import {
   ScrollView,
   Hidden,
   Stack,
+  Box,
 } from "native-base";
 import { Octicons } from "@native-base/icons";
 import LocationCard from "./LocationCard";
 import RestaurantCard from "./RestaurantCard";
+// import RestaurantCard from "../restaurants/RestaurantCard";
 import RateYourExperience from "./RateYourExperience";
 import ReviewHighlights from "./ReviewHighlights";
 import ReviewCard from "./ReviewCard";
@@ -148,9 +150,9 @@ function InfoWithTabs() {
               }
             >
               <Text
-                fontWeight="medium"
-                fontSize={"xl"}
-                color={tabName == item.name ? "red.500" : "coolGray.600"}
+                fontWeight="normal"
+                fontSize="lg"
+                color={tabName == item.name ? "red.500" : "grayZomato.200"}
               >
                 {item.name}
               </Text>
@@ -169,7 +171,7 @@ function InfoWithTabs() {
   );
 }
 
-function OverviewTab(props: any) {
+export function OverviewTab(props: any) {
   const moreInfoList = [
     "Home Delivery",
     "Takeaway Available",
@@ -184,18 +186,22 @@ function OverviewTab(props: any) {
       space={4}
       flexDirection={{
         base: "column-reverse",
-        md: "column-reverse",
-        lg: "column-reverse",
         xl: "row",
       }}
       mt="4"
+      maxW="1100"
     >
-      <VStack w={{ base: "100%", md: "100%", lg: "70%" }}>
+      <VStack flex="1">
         <ScrollView>
           <Text color="coolGray.800" fontWeight="medium" fontSize="2xl">
             About this place
           </Text>
-          <HStack mt={2} justifyContent="space-between" alignItems="center">
+          <HStack
+            mt="7"
+            mb="2"
+            justifyContent="space-between"
+            alignItems="center"
+          >
             <Text color="coolGray.800" fontWeight="medium" fontSize="xl">
               Menu
             </Text>
@@ -215,52 +221,57 @@ function OverviewTab(props: any) {
           </HStack>
           <HStack space="6" alignItems="center" w="100%" mt={3}>
             <VStack>
-              <Image
-                borderRadius="lg"
-                source={{
-                  uri: "https://b.zmtcdn.com/data/menus/048/18765048/3d7f5730c6035ff135714771e06bc33c.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
-                }}
-                alt="Alternate Text"
-                w={200}
-                h={218}
-              />
+              <Pressable>
+                <Image
+                  borderRadius="lg"
+                  source={{
+                    uri: "https://b.zmtcdn.com/data/menus/048/18765048/3d7f5730c6035ff135714771e06bc33c.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+                  }}
+                  alt="Alternate Text"
+                  w={200}
+                  h={218}
+                />
+              </Pressable>
               <Text
                 color="coolGray.800"
                 fontWeight="medium"
-                fontSize="lg"
+                fontSize="md"
                 mt="3"
               >
                 Food Menu
               </Text>
-              <Text color="coolGray.500" fontWeight="medium" fontSize="sm">
+
+              <Text color="coolGray.500" fontSize="xs">
                 5 pages
               </Text>
             </VStack>
             <VStack>
-              <Image
-                borderRadius="lg"
-                source={{
-                  uri: "https://b.zmtcdn.com/data/menus/048/18765048/ed952f0e5d64d8e34bbdd20e9c75dfb4.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
-                }}
-                alt="Alternate Text"
-                w={200}
-                h={218}
-              />
+              <Pressable>
+                <Image
+                  borderRadius="lg"
+                  source={{
+                    uri: "https://b.zmtcdn.com/data/menus/048/18765048/ed952f0e5d64d8e34bbdd20e9c75dfb4.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A",
+                  }}
+                  alt="Alternate Text"
+                  w={200}
+                  h={218}
+                />
+              </Pressable>
               <Text
                 color="coolGray.800"
                 fontWeight="medium"
-                fontSize="lg"
+                fontSize="md"
                 mt="3"
               >
                 Bar Menu
               </Text>
-              <Text color="coolGray.500" fontWeight="medium" fontSize="sm">
+              <Text color="coolGray.500" fontWeight="medium" fontSize="xs">
                 12 pages
               </Text>
             </VStack>
           </HStack>
-          <VStack mt={4}>
-            <Text color="coolGray.800" fontWeight="medium" fontSize="xl">
+          <VStack mt="8">
+            <Text color="coolGray.800" fontSize="xl">
               Cuisines
             </Text>
             <HStack alignItems="center" space={2}>
@@ -268,20 +279,20 @@ function OverviewTab(props: any) {
                 return <CuisineItem item={item} key={index} />;
               })}
             </HStack>
-            <Text mt={4} color="coolGray.800" fontWeight="medium" fontSize="xl">
+            <Text mt={8} color="coolGray.800" fontSize="xl">
               Popular Dishes
             </Text>
             <Text mt={2} color="coolGray.600" fontWeight="light" fontSize="md">
               Corn Curd, Avocado Toast, Lamb Curry, Cocktail, Drink, Dessert
             </Text>
-            <Text mt={4} color="coolGray.800" fontWeight="medium" fontSize="xl">
+            <Text mt={8} color="coolGray.800" fontSize="xl">
               People Say This Place Is Known For
             </Text>
             <Text mt={2} color="coolGray.600" fontWeight="light" fontSize="md">
               Bartending Awesome, Cozy, Relaxed Atmosphere, Live Music, Packed
               on Weekends, Comfortable Seating
             </Text>
-            <Text mt={4} color="coolGray.800" fontWeight="medium" fontSize="xl">
+            <Text mt={8} color="coolGray.800" fontSize="xl">
               Average Cost
             </Text>
             <Text mt={2} color="coolGray.600" fontWeight="light" fontSize="md">
@@ -299,10 +310,15 @@ function OverviewTab(props: any) {
             <Text mt={2} color="coolGray.600" fontWeight="light" fontSize="md">
               Cash and Cards accepted
             </Text>
-            <Text mt={4} color="coolGray.800" fontWeight="medium" fontSize="xl">
+            <Text mt={8} color="coolGray.800" fontSize="xl">
               More Info
             </Text>
-            <HStack mt={2} alignItems="center" space={40}>
+            <Stack
+              direction={{ base: "column", md: "row" }}
+              mt={2}
+              // alignItems="center"
+              space={{ base: 2, md: 40 }}
+            >
               <VStack space={2}>
                 {moreInfoList.slice(0, 3).map((item, index) => {
                   return <MoreInfoItem item={item} key={index} />;
@@ -313,8 +329,8 @@ function OverviewTab(props: any) {
                   return <MoreInfoItem item={item} key={index} />;
                 })}
               </VStack>
-            </HStack>
-            <Text mt={4} color="coolGray.600" fontWeight="medium" fontSize="xl">
+            </Stack>
+            <Text mt={8} color="grayZomato.100" fontSize="md" letterSpacing="3">
               OUR SPONSORS
             </Text>
 
@@ -324,33 +340,36 @@ function OverviewTab(props: any) {
               space={4}
               pt={2}
               flexWrap="wrap"
+              mb="4"
             >
               {list.splice(0, 2).map((item: listType, index: any) => {
                 return <RestaurantCard item={item} key={index} />;
               })}
             </HStack>
             <FoodBloggerCard />
-            <Divider mt={4} />
+            <Divider mt="2" mb="4" />
             <RateYourExperience />
             <ReviewHighlights />
-            <Divider mt={4} />
+            <Divider mb={4} />
             <ReviewCard />
           </VStack>
         </ScrollView>
       </VStack>
-      <VStack w={{ base: "100%", md: "100%", lg: "30%" }}>
+      <VStack>
         <Hidden from="xl">
           <Text mt={2} color="coolGray.800" fontWeight="medium" fontSize="xl">
             Address
           </Text>
         </Hidden>
 
-        <LocationCard />
+        <Box position="sticky" top="64" ml="1">
+          <LocationCard />
+        </Box>
       </VStack>
     </HStack>
   );
 }
-function BookTableTab(props: any) {
+export function BookTableTab(props: any) {
   return (
     <VStack w={{ base: "100%", md: "100%", lg: "100%" }}>
       <VStack

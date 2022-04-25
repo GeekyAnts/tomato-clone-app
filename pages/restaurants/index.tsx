@@ -1,5 +1,5 @@
 import React from "react";
-import { VStack, FlatList, useBreakpointValue } from "native-base";
+import { VStack, FlatList, useBreakpointValue, Box, View } from "native-base";
 import Header from "../../components/Header";
 import Navigator from "./Navigator";
 import Banner from "./Banner";
@@ -97,10 +97,14 @@ export default function Restaurants() {
     lg: 3,
     xl: 4,
   });
+
+  const ListItemSepartor = () => {
+    return <Box w="10" h="10" />;
+  };
   return (
     <VStack alignItems="center" bg="coolGray.50" w="100%">
       <Header />
-      <VStack alignItems="center" w={{ base: "90%", md: "90%", lg: "82%" }}>
+      <Box maxW="1164" w="100%" px="8">
         <Navigator />
         <Banner />
         {noColumn > 1 ? (
@@ -116,6 +120,7 @@ export default function Restaurants() {
             columnWrapperStyle={{
               justifyContent: "space-between",
             }}
+            ItemSeparatorComponent={ListItemSepartor}
           />
         ) : (
           <FlatList
@@ -128,7 +133,7 @@ export default function Restaurants() {
             key={noColumn}
           />
         )}
-      </VStack>
+      </Box>
       <Footer />
     </VStack>
   );
