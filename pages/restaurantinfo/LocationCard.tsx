@@ -172,32 +172,32 @@ function LocationCard(prps: any) {
           </Text>
         </Link>
       </HStack>
-      <HStack alignItems={"center"} space="2" mt="1">
-        <Link
-          href="#"
-          isUnderlined={false}
-          _text={{
-            color: "red.400",
-            fontSize: "sm",
-            fontWeight: "light",
-            fontFamily: "Okra,Helvetica,sans-serif",
-          }}
-          _hover={{
-            _text: {
-              color: "red.600",
-            },
-          }}
-        >
-          See all 2 Warehouse Cafe outlets in Delhi NCR
-        </Link>
-        <Link href="#" isUnderlined={false}>
-          <Icon
-            as={<Octicons name="triangle-right" />}
-            size="4"
-            color="red.400"
-          />
-        </Link>
-      </HStack>
+      {/* <HStack alignItems={"center"} space="2" mt="1"> */}
+      <Link
+        flex="1"
+        href="#"
+        isUnderlined={false}
+        _text={{
+          color: "red.400",
+          fontSize: "sm",
+          fontWeight: "light",
+          fontFamily: "Okra,Helvetica,sans-serif",
+        }}
+        _hover={{
+          _text: {
+            color: "red.600",
+          },
+        }}
+        alignItems="center"
+      >
+        See all 2 Warehouse Cafe outlets in Delhi NCR
+        <Icon
+          as={<Octicons name="triangle-right" />}
+          size="4"
+          color="red.400"
+        />
+      </Link>
+      {/* </HStack> */}
     </VStack>
   );
 }

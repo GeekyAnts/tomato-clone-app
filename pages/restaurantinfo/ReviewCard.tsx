@@ -9,6 +9,7 @@ import {
   Divider,
   Link,
   ScrollView,
+  Stack,
 } from "native-base";
 import {
   Entypo,
@@ -16,56 +17,58 @@ import {
   Ionicons,
   MaterialCommunityIcons,
 } from "@native-base/icons";
+
+const tags = ["courteous staff", "great food", "ambience", "amazing drinks"];
 function ReviewCard(props: any) {
   return (
-    <VStack w="100%" px="4" mt={2}>
-      <HStack justifyContent={"space-between"} w="100%">
-        <HStack my="2">
-          <Image
-            mr="3"
-            alt="Image"
-            width={12}
-            height={12}
-            borderRadius="full"
-            source={{
-              uri: "https://b.zmtcdn.com/data/user_profile_pictures/70f/fa9eca8e5c5aba0e9648be31e4f5770f.jpg?fit=around%7C400%3A400&crop=400%3A400%3B%2A%2C%2A",
-            }}
-          />
-          <VStack>
+    <VStack w="100%" mt={2}>
+      {/* <HStack justifyContent={"space-between"} w="100%"> */}
+      <Stack direction={{ base: "column", md: "row" }} my="2">
+        <Image
+          mr="3"
+          alt="Image"
+          width={12}
+          height={12}
+          borderRadius="full"
+          source={{
+            uri: "https://b.zmtcdn.com/data/user_profile_pictures/70f/fa9eca8e5c5aba0e9648be31e4f5770f.jpg?fit=around%7C400%3A400&crop=400%3A400%3B%2A%2C%2A",
+          }}
+        />
+        <VStack>
+          <Text
+            fontSize="md"
+            fontWeight="medium"
+            fontFamily="Okra,Helvetica,sans-serif"
+            color="coolGray.800"
+          >
+            Sunny Chauhan
+          </Text>
+          <HStack alignItems="center">
             <Text
-              fontSize="md"
-              fontWeight="medium"
+              fontSize="sm"
+              fontWeight="light"
               fontFamily="Okra,Helvetica,sans-serif"
-              color="coolGray.800"
+              color="coolGray.400"
             >
-              Sunny Chauhan
+              81 reviews
             </Text>
-            <HStack alignItems="center">
-              <Text
-                fontSize="sm"
-                fontWeight="light"
-                fontFamily="Okra,Helvetica,sans-serif"
-                color="coolGray.400"
-              >
-                81 reviews
-              </Text>
-              <Icon
-                as={<Entypo name="dot-single" />}
-                size="6"
-                color="coolGray.400"
-              />
-              <Text
-                fontSize="sm"
-                fontWeight="light"
-                fontFamily="Okra,Helvetica,sans-serif"
-                color="coolGray.400"
-              >
-                249 Followers
-              </Text>
-            </HStack>
-          </VStack>
-        </HStack>
-        <Box justifyContent="center" my="2">
+            <Icon
+              as={<Entypo name="dot-single" />}
+              size="6"
+              color="coolGray.400"
+            />
+            <Text
+              fontSize="sm"
+              fontWeight="light"
+              fontFamily="Okra,Helvetica,sans-serif"
+              color="coolGray.400"
+            >
+              249 Followers
+            </Text>
+          </HStack>
+        </VStack>
+
+        <HStack my="2" ml={{ base: "0", md: "auto" }}>
           <Link
             _hover={{ bg: "coolGray.100" }}
             alignItems="center"
@@ -74,7 +77,7 @@ function ReviewCard(props: any) {
             borderColor="red.400"
             py="1"
             px="4"
-            flex="1"
+            // flex="1"
           >
             <Text
               color="red.500"
@@ -85,8 +88,9 @@ function ReviewCard(props: any) {
               Follow
             </Text>
           </Link>
-        </Box>
-      </HStack>
+        </HStack>
+      </Stack>
+
       <HStack alignItems="center" space="2" mb="3">
         <HStack
           alignItems="center"
@@ -108,7 +112,6 @@ function ReviewCard(props: any) {
         <Text
           color="coolGray.700"
           fontSize="xs"
-          fontWeight="normal"
           fontFamily="Okra,Helvetica,sans-serif"
           mr="1"
         >
@@ -117,8 +120,8 @@ function ReviewCard(props: any) {
         <Text
           color="coolGray.500"
           fontSize="sm"
-          fontWeight="normal"
           fontFamily="Okra,Helvetica,sans-serif"
+          mb="0.5"
         >
           2 months ago
         </Text>
@@ -138,67 +141,40 @@ function ReviewCard(props: any) {
           POSITIVE
         </Text>
       </HStack>
-      <HStack alignItems="center" space="2" mb="4">
-        <Box bg="coolGray.200" px="2" py={2} borderRadius="2xl">
-          <Text
-            color="coolGray.700"
-            fontSize="xs"
-            fontWeight="light"
-            fontFamily="Okra,Helvetica,sans-serif"
-          >
-            courteous staff
-          </Text>
-        </Box>
-        <Box bg="coolGray.200" px="2" py={2} borderRadius="2xl">
-          <Text
-            color="coolGray.700"
-            fontSize="xs"
-            fontWeight="light"
-            fontFamily="Okra,Helvetica,sans-serif"
-          >
-            great food
-          </Text>
-        </Box>
-        <Box bg="coolGray.200" px="2" py={2} borderRadius={"2xl"}>
-          <Text
-            color="coolGray.700"
-            fontSize="xs"
-            fontWeight="light"
-            fontFamily="Okra,Helvetica,sans-serif"
-          >
-            ambience
-          </Text>
-        </Box>
-        <Box bg="coolGray.200" px="2" py={2} borderRadius="2xl">
-          <Text
-            color="coolGray.700"
-            fontSize="xs"
-            fontWeight="light"
-            fontFamily="Okra,Helvetica,sans-serif"
-          >
-            amazing drinks
-          </Text>
-        </Box>
+      <HStack alignItems="center" space="2" mb="4" flexWrap="wrap">
+        {tags.map((tag, index) => (
+          <Box bg="grayZomato.75" px="2" py="2" borderRadius="2xl" key={index}>
+            <Text
+              color="grayZomato.100"
+              fontSize="xs"
+              fontWeight="light"
+              fontFamily="Okra,Helvetica,sans-serif"
+            >
+              {tag}
+            </Text>
+          </Box>
+        ))}
       </HStack>
-      <HStack alignItems="center" mb="3">
-        <Text
-          color="coolGray.700"
-          fontSize="md"
-          fontWeight="light"
-          fontFamily="Okra,Helvetica,sans-serif"
-        >
-          The best bar in the country for a reason ! WHAT A PLACE !!! Their
-          Infusions are out of this world. Highly Recommend the Yang’s Old
-          Fashion, The Zing Thing and the Plum highball ! Also the Darjeeling
-          Mail. Manish from the bar made sure each drink was exceptional. In
-          terms of food the pork sliders were nice and juicy and when it came to
-          the fried chicken - super crispy on the outside yet moist and tender
-          on the inside. The Ambiance of the place was totally my kind - rustic
-          - relaxed yet great energy !! DEFINITELY RECOMMENDED !!
-        </Text>
-      </HStack>
+
+      <Text
+        color="grayZomato.200"
+        fontSize="md"
+        fontWeight="light"
+        fontFamily="Okra,Helvetica,sans-serif"
+        mb="3"
+      >
+        The best bar in the country for a reason ! WHAT A PLACE !!! Their
+        Infusions are out of this world. Highly Recommend the Yang’s Old
+        Fashion, The Zing Thing and the Plum highball ! Also the Darjeeling
+        Mail. Manish from the bar made sure each drink was exceptional. In terms
+        of food the pork sliders were nice and juicy and when it came to the
+        fried chicken - super crispy on the outside yet moist and tender on the
+        inside. The Ambiance of the place was totally my kind - rustic - relaxed
+        yet great energy !! DEFINITELY RECOMMENDED !!
+      </Text>
       <ScrollView
         mb="5"
+        mt="3"
         horizontal={true}
         showsHorizontalScrollIndicator={false}
       >
@@ -232,16 +208,14 @@ function ReviewCard(props: any) {
           borderRadius={"md"}
         />
       </ScrollView>
-      <HStack alignItems={"center"}>
-        <Text
-          color="coolGray.400"
-          fontSize="sm"
-          fontWeight="light"
-          fontFamily="Okra,Helvetica,sans-serif"
-        >
-          0 Votes for helpful, 0 Comments
-        </Text>
-      </HStack>
+      <Text
+        color="coolGray.400"
+        fontSize="sm"
+        fontWeight="light"
+        fontFamily="Okra,Helvetica,sans-serif"
+      >
+        0 Votes for helpful, 0 Comments
+      </Text>
       <HStack space="6" alignItems="center">
         <Link
           _hover={{ bg: "coolGray.50" }}

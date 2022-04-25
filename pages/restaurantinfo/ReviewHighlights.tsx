@@ -20,10 +20,10 @@ function ReviewHighlights(props: any) {
   ];
   return (
     <>
-      <Text mt={4} color="coolGray.800" fontWeight="medium" fontSize="xl">
+      <Text mt={8} color="coolGray.800" fontSize="xl">
         Review Highlights
       </Text>
-      <HStack alignItems="center" space={2} w="100%" flexWrap="wrap">
+      <HStack alignItems="center" space={2} w="100%" flexWrap="wrap" my="4">
         {reviewItemList.map((item, index) => {
           return <ReviewHighlightItem item={item} key={index} />;
         })}
@@ -42,7 +42,6 @@ function ReviewHighlightItem(props: any) {
       borderColor="coolGray.200"
       py="1"
       px="4"
-      my="2"
     >
       <Text
         color="coolGray.600"
