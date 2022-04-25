@@ -95,7 +95,7 @@ export default function Restaurants() {
     base: 1,
     sm: 2,
     lg: 3,
-    xl: 4,
+    // xl: 4,
   });
 
   const ListItemSepartor = () => {
