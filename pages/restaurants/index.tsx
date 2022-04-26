@@ -105,7 +105,6 @@ export default function Restaurants() {
     base: 1,
     sm: 2,
     lg: 3,
-    // xl: 4,
   });
 
   const ListItemSepartor = () => {
@@ -124,7 +123,7 @@ export default function Restaurants() {
             w="100%"
             numColumns={noColumn}
             data={list}
-            keyExtractor={(item, index) => "key" + index}
+            keyExtractor={(item, index) => "key" + item + index}
             renderItem={({ item }) => <RestaurantCard item={item} />}
             key={noColumn}
             columnWrapperStyle={{

@@ -21,6 +21,7 @@ export const ZomatoTheme = extendTheme({
       600: "#4F4F4F",
       650: "rgb(54, 54, 54)",
       700: "rgb(28, 28, 28)",
+      alpha5: "rgba(59,130,246,0.5)",
     },
     grayTransparentZomato: {
       400: "rgba(50,50,50,0)",
