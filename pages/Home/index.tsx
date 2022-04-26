@@ -12,11 +12,12 @@ import {
   Input,
   Menu,
   Pressable,
-  Select,
   Stack,
   Text,
   useBreakpointValue,
   VStack,
+  Hidden,
+  Link,
 } from "native-base";
 import ZomatoCategories from "./ZomatoCategories";
 import Footer from "../../components/Footer";
@@ -29,202 +30,186 @@ export default function Home() {
   });
   const [isSlideOpen, setSlideOpen] = useState(false);
   return (
-    <Box w="100%">
-      <VStack
-        alignItems="center"
-        w="100%"
-        bg="coolGray.50"
-        pb="10"
-        display={!isSlideOpen ? "flex" : "none"}
-      >
-        <VStack w="100%" h={500}>
-          <Image
-            position="absolute"
-            zIndex="-1"
-            source={{
-              uri: "https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png",
-            }}
-            alt="Alternate Text"
-            w="100%"
-            h={500}
-          />
-          {isTablet ? (
-            <Box px="8" alignItems="center">
-              <HStack
-                justifyContent="space-between"
-                mx={{ base: 10, md: 20, lg: 40 }}
-                py={4}
-                maxW="1100"
-                w="100%"
-              >
-                <Pressable flexDir="row" alignItems="center">
-                  <Icon
-                    as={FontAwesome}
-                    name="mobile"
-                    size="xs"
-                    color="white"
-                  />
-                  <Text color="white" fontWeight="medium" fontSize="md">
-                    Get the App
-                  </Text>
-                </Pressable>
-                <HStack space={{ base: "5", sm: "10" }} alignItems="center">
-                  <Pressable>
-                    <Text color="white" fontWeight="medium" fontSize="md">
-                      Add restaurant
-                    </Text>
-                  </Pressable>
-                  <Pressable>
-                    <Text color="white" fontWeight="medium" fontSize="md">
-                      Log in
-                    </Text>
-                  </Pressable>
-                  <Pressable>
-                    <Text color="white" fontWeight="medium" fontSize="md">
-                      Sign up
-                    </Text>
-                  </Pressable>
-                </HStack>
-              </HStack>
-            </Box>
-          ) : (
-            <HStack px="5">
-              <Pressable m="3" onPress={() => setSlideOpen(true)}>
-                <HamburgerIcon color="white" size="5" />
-              </Pressable>
-            </HStack>
-          )}
-
-          <Center mt={20} w="100%">
+    <>
+      <Box w="100%" display={isSlideOpen ? "none" : "flex"}>
+        <VStack
+          alignItems="center"
+          w="100%"
+          bg="coolGray.50"
+          pb="10"
+          display={!isSlideOpen ? "flex" : "none"}
+        >
+          {/* Header */}
+          <VStack w="100%" h={500}>
             <Image
-              width={80}
-              height={16}
-              src={"/images/tomatoWhite.png"}
+              position="absolute"
+              zIndex="-1"
+              source={{
+                uri: "https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png",
+              }}
               alt="Alternate Text"
+              w="100%"
+              h={500}
             />
 
-            <Heading
-              textAlign="center"
-              w={{ base: "90%", md: "60%", lg: "48%" }}
-              color="white"
-              fontSize={{ base: "3xl", md: "3xl", lg: "3xl", xl: "4xl" }}
-              fontWeight="normal"
-              lineHeight="xs"
-              mt={10}
-              mx={{ base: 10 }}
-            >
-              Discover the best food &amp; drinks in Delhi NCR
-            </Heading>
-
-            <Stack
-              direction={{ md: "row" }}
-              bg="white"
-              space="3"
-              alignItems={{ base: "stretch", md: "center" }}
-              w={{ base: "60%", lg: "48%" }}
-              p={2}
-              mt={12}
-              borderRadius="lg"
-            >
-              {/* <Pressable flexDir="row" alignItems="center">
-                <Icon
-                  as={Entypo}
-                  name="location-pin"
-                  size="6"
-                  color="red.400"
-                />
-                <Text color="coolGray.500" fontSize="md" mx="1">
-                  Bangla Sahib Gurdwara
-                </Text>
-                <Icon
-                  as={AntDesign}
-                  name="caretdown"
-                  size="3"
-                  color="coolGray.600"
-                  ml={{ base: "auto", md: "" }}
-                />
-                <Divider
-                  display={{ base: "none", md: "inline" }}
-                  h={5}
-                  w={0.5}
-                  ml={2}
-                  orientation="vertical"
-                />
-              </Pressable> */}
-              <Menu
-                w="56"
-                // w="100%"
-                placement="bottom"
-                trigger={(triggerProps) => {
-                  return (
-                    <Pressable
-                      flexDir="row"
-                      alignItems="center"
-                      {...triggerProps}
-                    >
+            <Box w="100%" alignItems="center" mb="4" px="8" py="4">
+              <HStack w="100%" maxW="1100" justifyContent="space-between">
+                <Hidden till="md">
+                  {/* <HStack w="100%" justifyContent="space-between"> */}
+                  <Link alignItems="center">
+                    <HStack alignItems="center">
                       <Icon
-                        as={Entypo}
-                        name="location-pin"
-                        size="6"
-                        color="red.400"
+                        as={FontAwesome}
+                        name="mobile"
+                        size="sm"
+                        color="white"
+                        mr="1"
                       />
-                      <Text color="coolGray.500" fontSize="md" mx="1">
-                        Bangla Sahib Gurdwara
+                      <Text color="white" fontWeight="medium" fontSize="sm">
+                        Get the App
                       </Text>
-                      <Icon
-                        as={AntDesign}
-                        name="caretdown"
-                        size="3"
-                        color="coolGray.600"
-                        ml={{ base: "auto", md: "" }}
-                      />
-                      <Divider
-                        display={{ base: "none", md: "inline" }}
-                        h={5}
-                        w={0.5}
-                        ml={2}
-                        orientation="vertical"
-                      />
+                    </HStack>
+                  </Link>
+                  <HStack space="10" alignItems="center">
+                    <Link
+                      href="#"
+                      _text={{
+                        color: "white",
+                        fontSize: "lg",
+                      }}
+                      isUnderlined={false}
+                    >
+                      Add restaurant
+                    </Link>
+                    <Pressable>
+                      <Text color="white" fontSize="lg">
+                        Log in
+                      </Text>
                     </Pressable>
-                  );
-                }}
-              >
-                <Menu.Item>
-                  <Text color="cyanZomato.200">Detect current location</Text>
-                </Menu.Item>
-              </Menu>
-              <Input
-                leftElement={
-                  <Icon
-                    ml="1"
-                    as={AntDesign}
-                    name="search1"
-                    size="5"
-                    color="coolGray.500"
-                  />
-                }
-                color="coolGray.500"
-                fontSize="md"
-                variant="unstyled"
-                placeholder="Search for a restaurant, cuisine or dish"
-                flex="1"
+                    <Pressable>
+                      <Text color="white" fontSize="lg">
+                        Sign up
+                      </Text>
+                    </Pressable>
+                  </HStack>
+                  {/* </HStack> */}
+                </Hidden>
+                <Hidden from="md">
+                  <Pressable m="3" onPress={() => setSlideOpen(true)}>
+                    <HamburgerIcon color="white" size="5" />
+                  </Pressable>
+                </Hidden>
+              </HStack>
+            </Box>
+
+            <Center mt={20} w="100%">
+              <Image
+                width={80}
+                height={16}
+                src={"/images/tomatoWhite.png"}
+                alt="Alternate Text"
               />
-            </Stack>
-          </Center>
+
+              <Heading
+                textAlign="center"
+                w={{ base: "90%", md: "60%", lg: "48%" }}
+                color="white"
+                fontSize={{ base: "3xl", md: "3xl", lg: "3xl", xl: "4xl" }}
+                fontWeight="normal"
+                lineHeight="xs"
+                mt={10}
+                mx={{ base: 10 }}
+              >
+                Discover the best food &amp; drinks in Delhi NCR
+              </Heading>
+
+              <Stack
+                direction={{ md: "row" }}
+                bg="white"
+                space="3"
+                alignItems={{ base: "stretch", md: "center" }}
+                w={{ base: "60%", lg: "48%" }}
+                p={2}
+                mt={12}
+                borderRadius="lg"
+              >
+                <Menu
+                  w="56"
+                  placement="bottom"
+                  trigger={(triggerProps) => {
+                    return (
+                      <Pressable
+                        flexDir="row"
+                        alignItems="center"
+                        {...triggerProps}
+                      >
+                        <Icon
+                          as={Entypo}
+                          name="location-pin"
+                          size="6"
+                          color="red.400"
+                        />
+                        <Text color="coolGray.500" fontSize="md" mx="1">
+                          Bangla Sahib Gurdwara
+                        </Text>
+                        <Icon
+                          as={AntDesign}
+                          name="caretdown"
+                          size="3"
+                          color="coolGray.600"
+                          ml={{ base: "auto", md: "" }}
+                        />
+                        <Divider
+                          display={{ base: "none", md: "inline" }}
+                          h={5}
+                          w={0.5}
+                          ml={2}
+                          orientation="vertical"
+                        />
+                      </Pressable>
+                    );
+                  }}
+                >
+                  <Menu.Item>
+                    <Text color="cyanZomato.200">Detect current location</Text>
+                  </Menu.Item>
+                </Menu>
+                <Input
+                  leftElement={
+                    <Icon
+                      ml="1"
+                      as={AntDesign}
+                      name="search1"
+                      size="5"
+                      color="coolGray.500"
+                    />
+                  }
+                  color="coolGray.500"
+                  fontSize="md"
+                  variant="unstyled"
+                  placeholder="Search for a restaurant, cuisine or dish"
+                  flex="1"
+                />
+              </Stack>
+            </Center>
+          </VStack>
+          <ZomatoCategories />
         </VStack>
-        <ZomatoCategories />
-      </VStack>
-      <Footer />
+
+        <Footer />
+      </Box>
       <Box
         w="100%"
-        h="100vh"
+        position="fixed"
+        top="0"
+        bottom="0"
         bg="white"
         display={isSlideOpen ? "flex" : "none"}
       >
         <HStack
           justifyContent="space-between"
           my="6"
-          px="4"
+          px="7"
           alignItems="center"
         >
           <Pressable onPress={() => setSlideOpen(false)}>
@@ -252,6 +237,6 @@ export default function Home() {
           </Pressable>
         </VStack>
       </Box>
-    </Box>
+    </>
   );
 }
