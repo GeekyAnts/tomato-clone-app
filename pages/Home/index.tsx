@@ -56,42 +56,44 @@ export default function Home() {
               <HStack w="100%" maxW="1100" justifyContent="space-between">
                 <Hidden till="md">
                   {/* <HStack w="100%" justifyContent="space-between"> */}
-                  <Link alignItems="center">
-                    <HStack alignItems="center">
-                      <Icon
-                        as={FontAwesome}
-                        name="mobile"
-                        size="sm"
-                        color="white"
-                        mr="1"
-                      />
-                      <Text color="white" fontWeight="medium" fontSize="sm">
-                        Get the App
-                      </Text>
-                    </HStack>
-                  </Link>
-                  <HStack space="10" alignItems="center">
-                    <Link
-                      href="#"
-                      _text={{
-                        color: "white",
-                        fontSize: "lg",
-                      }}
-                      isUnderlined={false}
-                    >
-                      Add restaurant
+                  <>
+                    <Link alignItems="center">
+                      <HStack alignItems="center">
+                        <Icon
+                          as={FontAwesome}
+                          name="mobile"
+                          size="sm"
+                          color="white"
+                          mr="1"
+                        />
+                        <Text color="white" fontWeight="medium" fontSize="sm">
+                          Get the App
+                        </Text>
+                      </HStack>
                     </Link>
-                    <Pressable>
-                      <Text color="white" fontSize="lg">
-                        Log in
-                      </Text>
-                    </Pressable>
-                    <Pressable>
-                      <Text color="white" fontSize="lg">
-                        Sign up
-                      </Text>
-                    </Pressable>
-                  </HStack>
+                    <HStack space="10" alignItems="center">
+                      <Link
+                        href="#"
+                        _text={{
+                          color: "white",
+                          fontSize: "lg",
+                        }}
+                        isUnderlined={false}
+                      >
+                        Add restaurant
+                      </Link>
+                      <Pressable>
+                        <Text color="white" fontSize="lg">
+                          Log in
+                        </Text>
+                      </Pressable>
+                      <Pressable>
+                        <Text color="white" fontSize="lg">
+                          Sign up
+                        </Text>
+                      </Pressable>
+                    </HStack>
+                  </>
                   {/* </HStack> */}
                 </Hidden>
                 <Hidden from="md">
