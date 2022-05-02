@@ -60,6 +60,7 @@ export default function Header(props: any) {
                 >
                   <Icon
                     ml="2"
+                    mr="3"
                     as={Entypo}
                     name="location-pin"
                     size="6"
@@ -97,18 +98,18 @@ export default function Header(props: any) {
             fontSize="md"
             flex={1}
             borderWidth="0"
-            outline="undefined"
             placeholder="Search for restaurant, cuisine or a dish"
+            fontWeight="light"
           />
         </HStack>
         <HStack space="3" ml="auto" display={{ base: "none", lg: "flex" }}>
           <Pressable>
-            <Text mr="4" color="coolGray.600" fontSize="lg">
+            <Text mr="4" color="coolGray.600" fontSize="lg" fontWeight="light">
               Log in
             </Text>
           </Pressable>
           <Pressable>
-            <Text color="coolGray.600" fontSize="lg">
+            <Text color="coolGray.600" fontSize="lg" fontWeight="light">
               Sign up
             </Text>
           </Pressable>

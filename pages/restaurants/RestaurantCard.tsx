@@ -65,6 +65,7 @@ function RestaurantCard(props: PropType) {
                 fontWeight: "medium",
                 fontSize: "sm",
               }}
+              borderRadius="xs"
             >
               Pro - Get 20% off
             </Center>
@@ -75,7 +76,7 @@ function RestaurantCard(props: PropType) {
           fontWeight="medium"
           fontSize="lg"
           w="100%"
-          mb={2}
+          mb={1}
         >
           {props.item?.name}
         </Text>
@@ -84,10 +85,12 @@ function RestaurantCard(props: PropType) {
             space={1}
             px={1}
             alignItems="center"
-            borderRadius="lg"
+            borderRadius="md"
             bg="success.700"
           >
-            <Text color="white">{props.item?.dininingReviw}</Text>
+            <Text color="white" fontSize="xs">
+              {props.item?.dininingReviw}
+            </Text>
             <Icon color="white" as={Entypo} size="xxs" name="star" />
           </HStack>
           <Text color="coolGray.700" fontWeight="normal" fontSize="xs">
@@ -97,10 +100,10 @@ function RestaurantCard(props: PropType) {
             space={1}
             px={1}
             alignItems="center"
-            borderRadius="lg"
+            borderRadius="sm"
             bg="success.700"
           >
-            <Text color="white" fontWeight="medium" fontSize="sm">
+            <Text color="white" fontWeight="medium" fontSize="xs">
               {props.item?.deliverhyReview}
             </Text>
             <Icon
