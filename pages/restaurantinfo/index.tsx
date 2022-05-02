@@ -8,6 +8,7 @@ import Details from "./Details";
 import InfoWithTabs, { BookTableTab, OverviewTab } from "./InfoWithTabs";
 import { tabListType } from "../../types/restaurants";
 import ReviewCard from "./ReviewCard";
+import MenuCard from "./MenuCard";
 
 const TabList = [
   {
@@ -35,12 +36,6 @@ export default function RestaurantInfo() {
   return (
     <VStack alignItems="center" bg="coolGray.50">
       <Header />
-
-      {/* <VStack
-        alignItems="center"
-        px={{ base: 4 }}
-        w={{ base: "95%", md: "90%", lg: "80%" }}
-      > */}
       <Box maxW="1164" w="100%" px="8">
         <Navigator />
         <InfoBanner />
@@ -51,7 +46,6 @@ export default function RestaurantInfo() {
           zIndex="40"
         >
           <Details />
-          {/* <InfoWithTabs /> */}
           <HStack mt="6" w="100%" flexWrap="wrap">
             {TabList.map((item: tabListType, index: any) => {
               return (
@@ -82,6 +76,7 @@ export default function RestaurantInfo() {
         {tabName == "Overview" ? <OverviewTab /> : null}
         {tabName == "Reviews" ? <ReviewCard /> : null}
         {tabName == "Book a Table" ? <BookTableTab /> : null}
+        {tabName == "Menu" ? <MenuCard /> : <></>}
 
         {/* <InfoWithTabs /> */}
         {/* </VStack> */}
