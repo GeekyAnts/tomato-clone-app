@@ -39,7 +39,6 @@ export default function Home() {
           pb="10"
           display={!isSlideOpen ? "flex" : "none"}
         >
-          {/* Header */}
           <VStack w="100%" h={500}>
             <Image
               position="absolute"
@@ -55,7 +54,6 @@ export default function Home() {
             <Box w="100%" alignItems="center" mb="4" px="8" py="4">
               <HStack w="100%" maxW="1100" justifyContent="space-between">
                 <Hidden till="md">
-                  {/* <HStack w="100%" justifyContent="space-between"> */}
                   <>
                     <Link alignItems="center">
                       <HStack alignItems="center">
@@ -94,7 +92,6 @@ export default function Home() {
                       </Pressable>
                     </HStack>
                   </>
-                  {/* </HStack> */}
                 </Hidden>
                 <Hidden from="md">
                   <Pressable m="3" onPress={() => setSlideOpen(true)}>

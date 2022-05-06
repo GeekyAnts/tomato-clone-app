@@ -18,10 +18,15 @@ This project exists thanks to all the people who contribute.
 </a>
 
 </a>
+
 #### Contribution guidelines:
+
 Code-level contributions to Tomato app come in the form of pull requests. These are done by forking the repo and making changes locally. You can raise a PR against development branch.
+
 ### Code Snippets
+
 Snippet showing rendering of content on basis of Breakpoint on web
+
 ```jsx
 function ZomatoCategories() {
   const router = useRouter();
@@ -49,7 +54,5 @@ router.push("/goformeal");
 ))}
 </HStack>
 );
-
-```
 
 ```

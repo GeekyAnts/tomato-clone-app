@@ -1,17 +1,6 @@
 import React from "react";
-import {
-  Box,
-  HStack,
-  VStack,
-  Pressable,
-  Text,
-  Link,
-  Image,
-  Icon,
-  Circle,
-} from "native-base";
+import { Box, HStack, Pressable, Text, Link, Image, Circle } from "native-base";
 
-import { Ionicons, MaterialIcons } from "@native-base/icons";
 import Header from "../../components/Header";
 import DiningOut from "../../components/DiningOut";
 import Footer from "../../components/Footer";
@@ -72,7 +61,6 @@ export default function GoForMeal(props: any) {
           w={{ base: "100%", md: "100%", lg: "100%" }}
           pl="0"
           alignItems={{ lg: "center" }}
-          // borderColor="coolGray.200"
           flexWrap="wrap"
         >
           <HStack
