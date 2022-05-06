@@ -64,14 +64,7 @@ const data = [
 
 function Tags() {
   return (
-    <HStack
-      maxW="1100"
-      mx="8"
-      pt="8"
-      pb="4"
-      // px="8"
-      flexWrap="wrap"
-    >
+    <HStack maxW="1100" mx="8" pt="8" pb="4" flexWrap="wrap">
       {data.map((tag, index) => (
         <Link
           key={index}

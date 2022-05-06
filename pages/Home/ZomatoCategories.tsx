@@ -2,13 +2,10 @@ import React from "react";
 
 import { useRouter } from "next/router";
 import {
-  Box,
   Center,
-  FlatList,
   HStack,
   Image,
   Pressable,
-  Stack,
   useBreakpointValue,
   VStack,
 } from "native-base";
@@ -65,41 +62,11 @@ function ZomatoCategories() {
       ))}
     </HStack>
   );
-  return (
-    <FlatList
-      w="90%"
-      mx="4"
-      mt="8"
-      numColumns={noColumn}
-      key={noColumn}
-      data={list}
-      keyExtractor={(item, index) => "key" + index}
-      ItemSeparatorComponent={() => (
-        <View style={{ width: "10", height: "10" }} />
-      )}
-      columnWrapperStyle={{
-        justifyContent: "space-between",
-      }}
-      renderItem={({ item, index }) => (
-        <Pressable
-          key={index}
-          onPress={() => {
-            router.push("/goformeal");
-          }}
-          ml={index !== 0 ? 2 : 0}
-          width={{ base: "49%", md: "22%" }}
-        >
-          <Card item={item} />
-        </Pressable>
-      )}
-    />
-  );
 }
 
 function Card(props: any) {
   return (
     <VStack
-      // w={{ base: "100%", sm: "auto" }}
       alignItems="center"
       borderWidth={1}
       borderColor="coolGray.200"
@@ -110,7 +77,6 @@ function Card(props: any) {
       <Image
         borderTopLeftRadius="lg"
         borderTopRightRadius="lg"
-        // w="100%"
         w={{ base: "100%", md: "267" }}
         h={192}
         source={{
@@ -119,7 +85,6 @@ function Card(props: any) {
         alt="Alternate Text"
       />
       <Center
-        // h={20}
         py={3}
         _text={{ fontSize: "lg", textAlign: "center" }}
         color="coolGray.800"
